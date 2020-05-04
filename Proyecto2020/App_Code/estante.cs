@@ -14,10 +14,11 @@ public class estante
     private float altura;
     private List<nivel> nivel;
     private float espacioRestante;
-
+    private static int contador=0;
 
     public estante(float largo, float ancho, float altura)
     {
+        crearId();
         this.espacioRestante = this.altura;
         this.nivel = new List<nivel>();
         this.largo = largo;
@@ -25,22 +26,18 @@ public class estante
         this.altura = altura;
 
     }
-    public float Largo
-    {
-        get { return largo; }
-        set { largo = value; }
-    }
-    public float Ancho
-    {
-        get { return ancho; }
-        set { ancho = value; }
-    }
-    public float Altura
-    {
-        get { return altura; }
-        set { altura = value; }
-    }
+
 
     public List<nivel> Nivel { get => nivel; set => nivel = value; }
     public float EspacioRestante { get => espacioRestante; set => espacioRestante = value; }
+    public int Id { get => id;}
+    public float Largo { get => largo; set => largo = value; }
+    public float Ancho { get => ancho; set => ancho = value; }
+    public float Altura { get => altura; set => altura = value; }
+
+    private void crearId()
+    {
+        this.id = contador;
+        contador += 1;
+    }
 }

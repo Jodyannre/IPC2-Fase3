@@ -34,8 +34,13 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td>
+                <asp:Label ID="Label4" runat="server" Text="Bodega:"></asp:Label>
+            </td>
+            <td>
+                <asp:DropDownList ID="DropDownList1" runat="server">
+                </asp:DropDownList>
+            </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
@@ -43,7 +48,7 @@
                 <asp:Button ID="Button1" runat="server" Text="Agregar" />
             </td>
             <td style="height: 57px">
-                <asp:Button ID="Button2" runat="server" Text="Continuar" />
+                <asp:Button ID="Button2" runat="server" Text="Aceptar" />
             </td>
             <td style="height: 57px">
                 <asp:Button ID="Button3" runat="server" Text="Salir" />

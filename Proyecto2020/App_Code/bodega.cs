@@ -13,37 +13,31 @@ public class bodega
     private string nombre;
     private int tamaño;
     private string ubicacion;
-    private List<pasillo> pasillo;
-    public bodega(string nombre, int tamaño, string ubicacion)
+    private string descripcion;
+    private List<pasillo> pasillos;
+    public bodega(string nombre, string descripcion, int tamaño, string ubicacion)
     {
         crearCodigo();
-        this.pasillo = new List<pasillo>();
+        this.pasillos = new List<pasillo>();
         this.nombre = nombre;
         this.tamaño = tamaño;
+        this.descripcion = descripcion;
         this.ubicacion = ubicacion;
     }
 
-    public string Nombre
-    {
-        get { return nombre; }
-        set { nombre = value; }
-    }
-    public int Tamaño
-    {
-        get { return tamaño; }
-        set { tamaño = value; }
-    }
-    public string Ubicacion
-    {
-        get { return ubicacion; }
-        set { ubicacion = value; }
-    }
 
-    public List<pasillo> Pasillo { get => pasillo; set => pasillo = value; }
+    public List<pasillo> Pasillo { get => pasillos; set => pasillos = value; }
+    public string Nombre { get => nombre; set => nombre = value; }
+    public int Tamaño { get => tamaño; set => tamaño = value; }
+    public string Ubicacion { get => ubicacion; set => ubicacion = value; }
 
     private void crearCodigo()
     {
         this.codigo = contador;
         contador++;
+    }
+    public void agregarPasillo(pasillo pasillo)
+    {
+        this.pasillos.Add(pasillo);
     }
 }

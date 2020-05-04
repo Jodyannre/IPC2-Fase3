@@ -42,6 +42,16 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
+            <td>
+                <asp:Label ID="Label5" runat="server" Text="Estante:"></asp:Label>
+            </td>
+            <td>
+                <asp:DropDownList ID="DropDownList1" runat="server">
+                </asp:DropDownList>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
             <td style="height: 57px">
                 <asp:Button ID="Button1" runat="server" Text="Agregar" />
             </td>
