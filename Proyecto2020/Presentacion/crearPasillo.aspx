@@ -45,7 +45,7 @@
         </tr>
         <tr>
             <td style="height: 57px">
-                <asp:Button ID="Button1" runat="server" Text="Agregar" />
+                <asp:Button ID="Button1" runat="server" Text="Agregar" OnClick="Button1_Click" />
             </td>
             <td style="height: 57px">
                 <asp:Button ID="Button2" runat="server" Text="Aceptar" />

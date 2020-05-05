@@ -18,32 +18,9 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE crearBodega
-	-- Add the parameters for the stored procedure here
-	@nombre varchar(50),
-	@descripcion varchar(50),
-	@direccion varchar(50),
-	@resultado int output
+CREATE PROCEDURE listadoBodega 
 AS
-BEGIN TRY
-	-- insertando en bodega
-	INSERT INTO BODEGA
-	(
-		Nombre, 
-		Descripcion, 
-		Direccion
-	)
-	VALUES(
-		@nombre,
-		@descripcion,
-		@direccion	
-	);
-	set @resultado =  0;
-	RETURN @resultado;
-END TRY
-BEGIN CATCH
-	SELECT @resultado = ERROR_NUMBER();
-	print @@ERROR +'-Descripcion del error: '+ ERROR_MESSAGE();
-	RETURN @resultado;
-END CATCH
+BEGIN
+	RETURN SELECT Codigo, Nombre FROM BODEGA;
+END
 GO

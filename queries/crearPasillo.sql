@@ -40,6 +40,7 @@ BEGIN TRY
 		@Largo,
 		@Ancho
 	);
+	SELECT @Resultado = MAX(Codigo) FROM PASILLO; 
 	--insertar en detalle-bodega
 	INSERT INTO DETALLE_BODEGA
 	(
@@ -48,14 +49,13 @@ BEGIN TRY
 	)
 	VALUES
 	(
-		@No_pasillo,
+		@Resultado,
 		@Bodega
 	);
-	SET @resultado = 0;
-	RETURN @resultado;
+	RETURN @Resultado;
 END TRY
 BEGIN CATCH
-	SELECT @resultado = ERROR_NUMBER();
+	SELECT @Resultado = ERROR_NUMBER();
 	print @@ERROR +'-Descripcion del error: '+ ERROR_MESSAGE();
-	RETURN @resultado;
+	RETURN @Resultado;
 END CATCH
